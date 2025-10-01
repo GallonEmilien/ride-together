@@ -12,7 +12,7 @@
     "sources": "https://github.com/GallonEmilien/ride-together"
   },
   "license": "CC0-1.0",
-  "icon": "assets/ridetogether/icon.png",
+  "icon": "ride-together.png",
   "environment": "*",
   "entrypoints": {
     "main": [

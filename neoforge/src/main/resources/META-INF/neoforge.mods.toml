@@ -11,7 +11,7 @@ authors = "Gallon Emilien"
 description = '''
 A mod that makes it possible for two players to ride one horse.
 '''
-#logoFile = ""
+logoFile = "ride-together.png"
 
 [[dependencies.ridetogether]]
 modId = "neoforge"
