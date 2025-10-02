@@ -1,4 +1,4 @@
-package fr.gallonemilien.mixin;
+package fr.gallonemilien.ridetogether.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;

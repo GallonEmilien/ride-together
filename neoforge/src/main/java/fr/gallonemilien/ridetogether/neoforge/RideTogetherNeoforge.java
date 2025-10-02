@@ -1,8 +1,8 @@
-package fr.gallonemilien.neoforge;
+package fr.gallonemilien.ridetogether.neoforge;
 
 import net.neoforged.fml.common.Mod;
 
-import fr.gallonemilien.RideTogether;
+import fr.gallonemilien.ridetogether.RideTogether;
 
 @Mod(RideTogether.MOD_ID)
 public final class RideTogetherNeoforge {
