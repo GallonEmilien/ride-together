@@ -6,12 +6,16 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
+
+    @Shadow
+    protected abstract Vec3 handleRelativeFrictionAndCalculateMovement(Vec3 vec3, float f);
 
     /**
      * Avoid the horse from moving when saddled
@@ -31,7 +35,7 @@ public abstract class LivingEntityMixin {
                 BlockPos blockPos = horse.getBlockPosBelowThatAffectsMyMovement();
                 float friction = horse.level().getBlockState(blockPos).getBlock().getFriction();
 
-                Vec3 vec = horse.handleRelativeFrictionAndCalculateMovement(Vec3.ZERO, friction);
+                Vec3 vec = this.handleRelativeFrictionAndCalculateMovement(Vec3.ZERO, friction);
 
                 double y = vec.y;
                 if (horse.hasEffect(MobEffects.LEVITATION)) {
