@@ -1,8 +1,8 @@
-package fr.gallonemilien.fabric;
+package fr.gallonemilien.ridetogether.fabric;
 
 import net.fabricmc.api.ModInitializer;
 
-import fr.gallonemilien.RideTogether;
+import fr.gallonemilien.ridetogether.RideTogether;
 
 public final class RideTogetherFabric implements ModInitializer {
     @Override
