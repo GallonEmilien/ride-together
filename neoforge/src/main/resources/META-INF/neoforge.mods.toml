@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[48,)"
+loaderVersion = "[2,)"
 #issueTrackerURL = ""
 license = "Apache-2.0"
 
@@ -11,26 +11,26 @@ authors = "Gallon Emilien"
 description = '''
 A mod that makes it possible for two players to ride one horse.
 '''
-logoFile = "ride-together.png"
+#logoFile = ""
 
 [[dependencies.ridetogether]]
-modId = "forge"
-mandatory = true
-versionRange = "[48,)"
+modId = "neoforge"
+type = "required"
+versionRange = "[20.6,20.7)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.ridetogether]]
 modId = "minecraft"
-mandatory = true
-versionRange = "[1.20.2,1.20.3)"
+type = "required"
+versionRange = "[1.20.6,1.20.7)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.ridetogether]]
 modId = "architectury"
-mandatory = true
-versionRange = "[10.1.20,)"
+type = "required"
+versionRange = "[12.1.4,)"
 ordering = "AFTER"
 side = "BOTH"
 
