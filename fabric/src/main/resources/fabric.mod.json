@@ -16,7 +16,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "fr.gallonemilien.fabric.RideTogetherFabric"
+      "fr.gallonemilien.ridetogether.fabric.RideTogetherFabric"
     ]
   },
   "mixins": [
