@@ -1,4 +1,4 @@
-package fr.gallonemilien.mixin;
+package fr.gallonemilien.ridetogether.mixin;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
