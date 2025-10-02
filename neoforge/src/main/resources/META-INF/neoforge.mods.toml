@@ -16,21 +16,21 @@ logoFile = "ride-together.png"
 [[dependencies.ridetogether]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.7,21.9)"
+versionRange = "[21.6,21.9)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.ridetogether]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.7,1.21.9)"
+versionRange = "[1.21.6,1.21.9)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.ridetogether]]
 modId = "architectury"
 type = "required"
-versionRange = "[17.0.8,)"
+versionRange = "[17.0.6,)"
 ordering = "AFTER"
 side = "BOTH"
 
