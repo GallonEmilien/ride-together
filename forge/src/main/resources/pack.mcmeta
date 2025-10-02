@@ -1,7 +1,6 @@
 {
   "pack": {
     "description": "Let's ride together !",
-    "forge:server_data_pack_format": 15,
-    "pack_format": 15
+    "pack_format": 18
   }
 }

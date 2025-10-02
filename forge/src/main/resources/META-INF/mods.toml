@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[48,)"
 #issueTrackerURL = ""
 license = "Apache-2.0"
 
@@ -16,21 +16,21 @@ logoFile = "ride-together.png"
 [[dependencies.ridetogether]]
 modId = "forge"
 mandatory = true
-versionRange = "[47,)"
+versionRange = "[48,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.ridetogether]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20,1.20.2)"
+versionRange = "[1.20.2,1.20.3)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.ridetogether]]
 modId = "architectury"
 mandatory = true
-versionRange = "[9.2.14,)"
+versionRange = "[10.1.20,)"
 ordering = "AFTER"
 side = "BOTH"
 

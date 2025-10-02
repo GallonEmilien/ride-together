@@ -48,11 +48,13 @@ public abstract class AbstractHorseMixin {
     @Inject(at = @At("HEAD"), method = "positionRider(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity$MoveFunction;)V", cancellable = true)
     @Environment(EnvType.CLIENT)
     protected void positionRider(Entity entity, Entity.MoveFunction moveFunction, CallbackInfo ci) {
-        if((Object) this instanceof AbstractHorse abstractHorse) {
-            if(abstractHorse.hasPassenger(entity) && abstractHorse.getPassengers().indexOf(entity) == 1) {
-                double baseY = abstractHorse.getY() + abstractHorse.getPassengersRidingOffset() + entity.getMyRidingOffset();
-                float yawRad = (float) Math.toRadians(-abstractHorse.getYRot());
+        if ((Object) this instanceof AbstractHorse abstractHorse) {
+            int passengerIndex = abstractHorse.getPassengers().indexOf(entity);
 
+            if (passengerIndex == 1) {
+                double baseY = abstractHorse.getPassengerRidingPosition(entity).y + entity.getMyRidingOffset(entity);
+
+                float yawRad = (float) Math.toRadians(-abstractHorse.getYRot());
                 double backX = Math.sin(yawRad) * 0.5;
                 double backZ = Math.cos(yawRad) * 0.5;
                 double finalX = abstractHorse.getX() - backX;
