@@ -20,7 +20,7 @@ public abstract class LivingEntityMixin {
     @Inject(method = "travel", at = @At("HEAD"), cancellable = true)
     private void travel(Vec3 vec3, CallbackInfo ci) {
         if ((Object) this instanceof AbstractHorse horse) {
-            if (!horse.isVehicle() && horse.isSaddled()) {
+            if (!horse.isVehicle() && horse.isSaddled() && !horse.isInLiquid() && !horse.isInPowderSnow) {
                 double gravity = horse.getGravity();
                 boolean falling = horse.getDeltaMovement().y <= 0.0;
 
