@@ -9,4 +9,8 @@ fabric/run
 neoforge/.gradle
 neoforge/build
 neoforge/run
+common/run
+forge/run
+forge/build
+forge/.gradle
 releases
