@@ -2,6 +2,7 @@ build
 .idea
 .gradle
 common/.gradle
+common/run
 common/build
 fabric/.gradle
 fabric/build
