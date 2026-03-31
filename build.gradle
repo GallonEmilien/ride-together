@@ -1,7 +1,6 @@
 plugins {
-    id 'dev.architectury.loom' version '1.13-SNAPSHOT' apply false
-    id 'architectury-plugin' version '3.4-SNAPSHOT'
-    id 'com.gradleup.shadow' version '8.3.6' apply false
+    id 'architectury-plugin' version '3.5-SNAPSHOT'
+    id 'dev.architectury.loom-no-remap' version '1.14-SNAPSHOT' apply false
 }
 
 architectury {
@@ -9,14 +8,45 @@ architectury {
 }
 
 allprojects {
+    apply plugin: "java"
+    apply plugin: "architectury-plugin"
+
     group = rootProject.maven_group
     version = rootProject.mod_version
+
+    repositories {
+        maven {
+            name = 'NeoForge'
+            url 'https://maven.neoforged.net/releases'
+        }
+        maven {
+            name = 'CurseForge'
+            url 'https://minecraft.curseforge.com/api/maven'
+        }
+        maven {
+            name = 'Shedaniel Maven'
+            url = 'https://maven.shedaniel.me'
+        }
+        maven {
+            name = 'TerraformersMC'
+            url = 'https://maven.terraformersmc.com/releases'
+        }
+        mavenLocal()
+        mavenCentral()
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+        options.release = 25
+    }
+
+    java {
+        withSourcesJar()
+    }
 }
 
 subprojects {
-    apply plugin: 'dev.architectury.loom'
-    apply plugin: 'architectury-plugin'
-    apply plugin: 'maven-publish'
+    apply plugin: 'dev.architectury.loom-no-remap'
 
     base {
         // Set up a suffixed format for the mod jar names, e.g. `example-fabric`.
@@ -36,8 +66,7 @@ subprojects {
     }
 
     dependencies {
-        minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
-        mappings loom.officialMojangMappings()
+        minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
     }
 
     java {
@@ -48,27 +77,5 @@ subprojects {
 
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
-    }
-
-    tasks.withType(JavaCompile).configureEach {
-        it.options.release = 21
-    }
-
-    // Configure Maven publishing.
-    publishing {
-        publications {
-            mavenJava(MavenPublication) {
-                artifactId = base.archivesName.get()
-                from components.java
-            }
-        }
-
-        // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-        repositories {
-            // Add repositories to publish to here.
-            // Notice: This block does NOT have the same function as the block in the top level.
-            // The repositories here will be used for publishing your artifact, not for
-            // retrieving dependencies.
-        }
     }
 }
