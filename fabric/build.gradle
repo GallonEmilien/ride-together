@@ -50,3 +50,7 @@ shadowJar {
     configurations = [project.configurations.shadowCommon]
     archiveClassifier = null
 }
+
+jar {
+    archiveClassifier = 'raw'
+}
