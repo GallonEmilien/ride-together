@@ -25,7 +25,7 @@ public abstract class AbstractHorseMixin {
         }
 
         /* Make the second player ride the horse */
-        if(horse.isVehicle()) {
+        if(horse.isVehicle() && horse.getPassengers().size() == 1) {
             doPlayerRide(player);
             player.startRiding(horse, true);
             cir.setReturnValue(InteractionResult.SUCCESS);
